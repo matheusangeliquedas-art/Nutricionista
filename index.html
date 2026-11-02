@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriVida | Nutrição e Bem-estar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --green: #718675;
+            --green-dark: #40594A;
+            --green-light: #E7EEE7;
+            --beige: #F6F3EC;
+            --white: #FFFFFF;
+            --text: #343D35;
+            --gray: #777F78;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--white);
+            color: var(--text);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* MENU */
+
+        header {
+            background: var(--white);
+            padding: 20px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 27px;
+            color: var(--green-dark);
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: var(--green);
+        }
+
+        .header-btn {
+            background: var(--green-dark);
+            color: white;
+            padding: 12px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* BANNER */
+
+        .hero {
+            background: var(--beige);
+            min-height: 570px;
+            padding: 70px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-content {
+            max-width: 520px;
+        }
+
+        .tag {
+            color: var(--green);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(38px, 5vw, 58px);
+            line-height: 1.15;
+            color: var(--green-dark);
+            margin: 22px 0;
+        }
+
+        .hero p {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .primary-btn {
+            display: inline-block;
+            background: var(--green-dark);
+            color: white;
+            padding: 16px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .primary-btn:hover {
+            background: var(--green);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            width: 45%;
+            max-width: 480px;
+            height: 430px;
+            object-fit: cover;
+            border-radius: 180px 180px 20px 20px;
+        }
+
+        /* SOBRE */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .about-image {
+            width: 45%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--green-dark);
+            font-size: 38px;
+            margin: 15px 0 20px;
+        }
+
+        .about-content p {
+            color: var(--gray);
+            line-height: 1.9;
+            margin-bottom: 15px;
+        }
+
+        /* SERVIÇOS */
+
+        .services {
+            background: var(--green-light);
+            text-align: center;
+        }
+
+        .section-description {
+            color: var(--gray);
+            margin-bottom: 45px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 15px;
+            transition: .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .service-icon {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: var(--green-dark);
+            margin-bottom: 15px;
+            font-size: 19px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        /* DIFERENCIAIS */
+
+        .benefits {
+            text-align: center;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-item {
+            padding: 25px;
+        }
+
+        .benefit-item h3 {
+            color: var(--green-dark);
+            margin: 15px 0;
+        }
+
+        .benefit-item p {
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        /* DEPOIMENTO */
+
+        .testimonial {
+            background: var(--beige);
+            text-align: center;
+        }
+
+        .testimonial blockquote {
+            max-width: 700px;
+            margin: 25px auto;
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            line-height: 1.6;
+            color: var(--green-dark);
+        }
+
+        .testimonial span {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* CONTATO */
+
+        .contact {
+            background: var(--green-dark);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact p {
+            color: #E0E9E1;
+            margin-bottom: 30px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: white;
+            color: var(--green-dark);
+            padding: 16px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        footer {
+            background: #304438;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+
+        /* WHATSAPP FLUTUANTE */
+
+        .whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 29px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px #0003;
+            z-index: 100;
+            transition: .3s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 768px) {
+
+            header {
+                padding: 20px 5%;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 18px;
+            }
+
+            .header-btn {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                padding: 60px 6%;
+                text-align: center;
+            }
+
+            .hero-image {
+                width: 100%;
+                height: 350px;
+            }
+
+            .about {
+                flex-direction: column;
+                gap: 35px;
+            }
+
+            .about-image {
+                width: 100%;
+                height: 320px;
+            }
+
+            section {
+                padding: 65px 6%;
+            }
+
+            .service-grid,
+            .benefit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .testimonial blockquote {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">NutriVida.</div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <a class="header-btn" href="#contato">
+            Agendar consulta
+        </a>
+    </header>
+
+    <main>
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-content">
+                <span class="tag">Nutrição e qualidade de vida</span>
+
+                <h1>Uma vida mais saudável começa com pequenas escolhas.</h1>
+
+                <p>
+                    Cuide da sua alimentação de maneira leve e equilibrada.
+                    Tenha um acompanhamento nutricional pensado para você,
+                    respeitando sua rotina e seus objetivos.
+                </p>
+
+                <a href="https://wa.me/5517999999999"
+                   class="primary-btn" target="_blank">
+                    Agende sua consulta →
+                </a>
+            </div>
+
+            <img
+                class="hero-image"
+                src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=900"
+                alt="Alimentação saudável">
+        </section>
+
+        <section class="about" id="sobre">
+
+            <img
+                class="about-image"
+                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=900"
+                alt="Atendimento nutricional">
+
+            <div class="about-content">
+                <span class="tag">Conheça nossa clínica</span>
+
+                <h2>Nutrição com equilíbrio, cuidado e propósito.</h2>
+
+                <p>
+                    Acreditamos que uma alimentação saudável não precisa
+                    ser complicada ou restritiva.
+                </p>
+
+                <p>
+                    Nosso objetivo é ajudar você a construir hábitos
+                    alimentares mais saudáveis, com acompanhamento
+                    individualizado e atenção às suas necessidades.
+                </p>
+
+                <a href="#contato" class="primary-btn">
+                    Conheça nosso atendimento
+                </a>
+            </div>
+
+        </section>
+
+        <section class="services" id="servicos">
+
+            <span class="tag">Como podemos ajudar?</span>
+
+            <h2>Nossos atendimentos</h2>
+
+            <p class="section-description">
+                Cuidado nutricional para diferentes fases e objetivos.
+            </p>
+
+            <div class="service-grid">
+
+                <div class="service-card">
+                    <div class="service-icon">🥗</div>
+                    <h3>Reeducação alimentar</h3>
+                    <p>
+                        Desenvolva hábitos alimentares mais saudáveis
+                        e sustentáveis para sua rotina.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⚖️</div>
+                    <h3>Emagrecimento saudável</h3>
+                    <p>
+                        Acompanhamento individualizado para alcançar
+                        seus objetivos com equilíbrio.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💚</div>
+                    <h3>Nutrição personalizada</h3>
+                    <p>
+                        Estratégias nutricionais adaptadas às suas
+                        necessidades e estilo de vida.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="benefits">
+
+            <span class="tag">Nosso diferencial</span>
+
+            <h2>Mais que uma dieta, uma mudança de hábitos.</h2>
+
+            <div class="benefit-grid">
+
+                <div class="benefit-item">
+                    <div class="service-icon">🌿</div>
+                    <h3>Atendimento humanizado</h3>
+                    <p>
+                        Respeito à sua individualidade e às suas
+                        necessidades.
+                    </p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="service-icon">🎯</div>
+                    <h3>Plano individualizado</h3>
+                    <p>
+                        Orientações alinhadas aos seus objetivos
+                        e à sua rotina.
+                    </p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="service-icon">✨</div>
+                    <h3>Acompanhamento</h3>
+                    <p>
+                        Orientação durante sua jornada de
+                        transformação alimentar.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="testimonial">
+
+            <span class="tag">Experiências</span>
+
+            <h2>O que nossos pacientes dizem</h2>
+
+            <blockquote>
+                "Aprendi que cuidar da alimentação pode ser
+                muito mais simples e prazeroso do que imaginava!"
+            </blockquote>
+
+            <span>Paciente da NutriVida</span>
+
+        </section>
+
+        <section class="contact" id="contato">
+
+            <span class="tag">Comece hoje</span>
+
+            <h2>Seu bem-estar merece atenção.</h2>
+
+            <p>
+                Entre em contato e agende sua consulta.
+                Vamos conversar sobre seus objetivos!
+            </p>
+
+            <a href="https://wa.me/5517999999999"
+               target="_blank" class="contact-btn">
+                Conversar pelo WhatsApp
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 NutriVida - Nutrição e Bem-estar.</p>
+        <p>Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/5517999999999"
+       target="_blank"
+       class="whatsapp"
+       aria-label="Conversar pelo WhatsApp">
+        ☎
+    </a>
+
+</body>
+</html>
